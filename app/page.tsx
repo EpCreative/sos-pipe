@@ -123,33 +123,21 @@ export default function Home() {
         <div className="heroCopy">
           <p className="eyebrow">SOS PIPE / CURADORIA DE ACESSÓRIOS</p>
           <h1>
-            <span>SEU MOMENTO.</span>
-            <span>DO SEU JEITO.</span>
+            <span>SUA SMOKESHOP</span>
+            <span>24HRS</span>
           </h1>
           <p className="heroText">
             Design, qualidade e presença em uma seleção feita para transformar
             pequenos momentos em experiências particulares.
           </p>
           <div className="heroActions">
-            <a className="button buttonLight" href="#produtos">
-              EXPLORAR PRODUTOS
+            <a className="button buttonLight" href="#contato">
+              DELIVERY CHAME JÁ
             </a>
             <a className="textLink" href="#manifesto">
               CONHECER A SOS <span>↗</span>
             </a>
           </div>
-        </div>
-
-        <div className="heroVisual" aria-hidden="true">
-          <img
-            src="/assets/hero-products.png"
-            alt=""
-            width={1686}
-            height={933}
-            loading="eager"
-            fetchPriority="high"
-          />
-          <span className="heroIndex">SOS / 001</span>
         </div>
 
         <div className="heroScroll">
