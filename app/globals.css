@@ -40,6 +40,7 @@ body {
   letter-spacing: 0.035em;
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word;
+  overflow-x: clip;
 }
 
 a {
@@ -193,13 +194,13 @@ input {
   min-height: calc(100vh - 114px);
   height: 760px;
   max-height: 900px;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: 1fr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(circle at 72% 45%, #171717 0, #080808 34%, #050505 66%),
+    radial-gradient(circle at 50% 42%, #171717 0, #080808 34%, #050505 66%),
     var(--black);
 }
 
@@ -211,18 +212,20 @@ input {
     linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 80px 80px;
-  mask-image: linear-gradient(90deg, black, transparent 68%);
+  mask-image: radial-gradient(circle at center, black, transparent 76%);
   pointer-events: none;
 }
 
 .heroCopy {
   position: relative;
   z-index: 4;
-  grid-column: 1 / 7;
-  grid-row: 1;
-  align-self: center;
-  padding: clamp(4.5rem, 7vw, 7rem) 2vw clamp(6rem, 8vw, 8rem)
-    var(--gutter);
+  width: min(960px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(4.5rem, 7vw, 7rem) var(--gutter)
+    clamp(6rem, 8vw, 8rem);
+  text-align: center;
 }
 
 .eyebrow {
@@ -235,7 +238,7 @@ input {
 }
 
 .hero h1 {
-  max-width: 8.6ch;
+  max-width: none;
   margin: 0;
   font-size: var(--type-hero);
   font-weight: 400;
@@ -251,7 +254,7 @@ input {
 
 .heroText {
   max-width: 30rem;
-  margin: clamp(1.5rem, 2.5vw, 2.25rem) 0 0;
+  margin: clamp(1.5rem, 2.5vw, 2.25rem) auto 0;
   color: #a3a39f;
   font-size: clamp(1.125rem, 0.45vw + 1rem, 1.375rem);
   line-height: 1.48;
@@ -261,6 +264,7 @@ input {
 .heroActions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 32px;
   margin-top: clamp(2rem, 3vw, 2.75rem);
 }
@@ -363,7 +367,7 @@ input {
 
 .heroScroll {
   position: absolute;
-  left: 7vw;
+  left: 50%;
   bottom: 31px;
   z-index: 5;
   display: flex;
@@ -372,6 +376,7 @@ input {
   color: #62625e;
   font-size: var(--type-micro);
   letter-spacing: 0.16em;
+  transform: translateX(-50%);
 }
 
 .scrollLine {
@@ -1006,7 +1011,7 @@ footer {
   }
 
   .heroCopy {
-    grid-column: 1 / 8;
+    width: min(900px, 100%);
   }
 
   .productGrid {
@@ -1107,25 +1112,17 @@ footer {
   .hero {
     height: auto;
     min-height: calc(100svh - 102px);
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
   }
 
   .heroCopy {
     z-index: 5;
-    grid-area: 1 / 1;
-    align-self: end;
+    align-self: center;
     padding: clamp(6rem, 16vw, 9rem) 24px clamp(4.5rem, 12vw, 6rem);
-    background: linear-gradient(
-      0deg,
-      rgba(5, 5, 5, 1) 0%,
-      rgba(5, 5, 5, 0.78) 47%,
-      rgba(5, 5, 5, 0.14) 100%
-    );
+    text-align: center;
   }
 
   .hero h1 {
-    max-width: 8.6ch;
+    max-width: none;
     font-size: clamp(4rem, 15vw, 6.25rem);
     line-height: 0.88;
     letter-spacing: 0.004em;
@@ -1133,13 +1130,14 @@ footer {
 
   .heroText {
     max-width: 440px;
-    margin-top: 25px;
+    margin: 25px auto 0;
     font-size: clamp(1.0625rem, 1.6vw + 0.7rem, 1.25rem);
     line-height: 1.45;
   }
 
   .heroActions {
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     gap: 10px;
     margin-top: 31px;
@@ -1460,7 +1458,11 @@ footer {
   }
 
   .hero h1 {
-    font-size: clamp(3.15rem, 15.5vw, 4.25rem);
+    font-size: clamp(2.9rem, 13vw, 4.25rem);
+  }
+
+  .hero h1 span {
+    white-space: normal;
   }
 
   .heroText {
