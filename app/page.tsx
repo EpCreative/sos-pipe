@@ -118,45 +118,21 @@ export default function Home() {
         </details>
       </header>
 
-      <section className="hero" id="inicio">
-        <div className="heroGrid" />
-        <div className="heroCopy">
-          <p className="eyebrow">SOS PIPE / CURADORIA DE ACESSÓRIOS</p>
-          <h1>
-            <span>SUA SMOKESHOP</span>
-            <span>24HRS</span>
-          </h1>
-          <p className="heroText">
-            Design, qualidade e presença em uma seleção feita para transformar
-            pequenos momentos em experiências particulares.
-          </p>
-          <div className="heroActions">
-            <a className="button buttonLight" href="#contato">
-              DELIVERY CHAME JÁ
-            </a>
-            <a className="textLink" href="#manifesto">
-              CONHECER A SOS <span>↗</span>
-            </a>
-          </div>
-        </div>
-
-        <div
-          className="heroProducts"
-          aria-label="Três bongs temáticos premium em destaque"
-        >
-          <img
-            className="heroProductPremium"
-            src="/assets/hero-bongs/premium-themed-group.webp"
-            alt="Bongs temáticos verde, preto e preto com máscara branca"
-            width={1500}
-            height={1200}
-          />
-        </div>
-
-        <div className="heroScroll">
-          <span>ROLE PARA EXPLORAR</span>
-          <span className="scrollLine" />
-        </div>
+      <section
+        className="hero heroBanner"
+        id="inicio"
+        aria-label="SOS Pipe Smoke Shop 24 horas"
+      >
+        <img
+          className="heroBannerImage"
+          src="/assets/hero-banner-sos-pipe.jpg"
+          alt="Banner SOS Pipe Smoke Shop 24h com fumaça azul e acessórios"
+          width={2048}
+          height={880}
+        />
+        <a className="button buttonLight heroDeliveryButton" href="#contato">
+          DELIVERY JÁ
+        </a>
       </section>
 
       <section className="assuranceBar" aria-label="Benefícios da loja">
