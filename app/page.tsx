@@ -130,7 +130,13 @@ export default function Home() {
           width={2048}
           height={880}
         />
-        <a className="button buttonLight heroDeliveryButton" href="#contato">
+        <a
+          className="button buttonLight heroDeliveryButton"
+          href="https://wa.me/5511970602047"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Chamar a SOS Pipe no WhatsApp"
+        >
           DELIVERY JÁ
         </a>
       </section>
