@@ -140,6 +140,30 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="heroProducts" aria-label="Bongs temáticos em destaque">
+          <img
+            className="heroProduct heroProductGrogu"
+            src="/assets/hero-bongs/grogu-bong-cutout.png"
+            alt="Bong temático verde"
+            width={1065}
+            height={1170}
+          />
+          <img
+            className="heroProduct heroProductBatman"
+            src="/assets/hero-bongs/batman-bong-cutout.png"
+            alt="Bong temático preto"
+            width={399}
+            height={818}
+          />
+          <img
+            className="heroProduct heroProductGhostface"
+            src="/assets/hero-bongs/ghostface-bong-cutout.png"
+            alt="Bong temático preto e branco"
+            width={634}
+            height={1265}
+          />
+        </div>
+
         <div className="heroScroll">
           <span>ROLE PARA EXPLORAR</span>
           <span className="scrollLine" />

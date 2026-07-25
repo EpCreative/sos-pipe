@@ -192,12 +192,14 @@ input {
 .hero {
   position: relative;
   isolation: isolate;
-  min-height: calc(100vh - 114px);
-  height: 760px;
+  min-height: 640px;
+  height: calc(100svh - 114px);
   max-height: 900px;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
   align-items: center;
-  justify-content: center;
+  column-gap: clamp(1.5rem, 3vw, 4rem);
+  padding-inline: var(--gutter);
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   background: #02050a;
@@ -225,8 +227,8 @@ input {
 .hero::after {
   z-index: 1;
   background:
-    radial-gradient(circle at 50% 43%, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.7) 78%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.34), rgba(0, 3, 10, 0.58));
+    radial-gradient(circle at 72% 44%, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.7) 82%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.54), rgba(0, 2, 8, 0.12) 58%, rgba(0, 3, 10, 0.42));
 }
 
 .heroGrid {
@@ -238,20 +240,20 @@ input {
     linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 80px 80px;
-  mask-image: radial-gradient(circle at center, black, transparent 76%);
+  mask-image: linear-gradient(90deg, black, rgba(0, 0, 0, 0.45) 68%, transparent);
   pointer-events: none;
 }
 
 .heroCopy {
   position: relative;
-  z-index: 4;
-  width: min(960px, 100%);
+  z-index: 5;
+  width: min(660px, 100%);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: clamp(4.5rem, 7vw, 7rem) var(--gutter)
+  align-items: flex-start;
+  padding: clamp(4.5rem, 7vw, 7rem) 0
     clamp(6rem, 8vw, 8rem);
-  text-align: center;
+  text-align: left;
 }
 
 .eyebrow {
@@ -266,7 +268,7 @@ input {
 .hero h1 {
   max-width: none;
   margin: 0;
-  font-size: var(--type-hero);
+  font-size: clamp(4.75rem, 6.35vw, 7.6rem);
   font-weight: 400;
   letter-spacing: 0.005em;
   line-height: 0.88;
@@ -280,7 +282,7 @@ input {
 
 .heroText {
   max-width: 30rem;
-  margin: clamp(1.5rem, 2.5vw, 2.25rem) auto 0;
+  margin: clamp(1.5rem, 2.5vw, 2.25rem) 0 0;
   color: #a3a39f;
   font-size: clamp(1.125rem, 0.45vw + 1rem, 1.375rem);
   line-height: 1.48;
@@ -290,7 +292,7 @@ input {
 .heroActions {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 32px;
   margin-top: clamp(2rem, 3vw, 2.75rem);
 }
@@ -351,6 +353,58 @@ input {
   transform: translate(2px, -2px);
 }
 
+.heroProducts {
+  position: relative;
+  z-index: 4;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 620px;
+  margin-right: calc(var(--gutter) * -0.45);
+  pointer-events: none;
+}
+
+.heroProducts::after {
+  content: "";
+  position: absolute;
+  right: 2%;
+  bottom: 3%;
+  z-index: 0;
+  width: 92%;
+  height: 12%;
+  border-radius: 50%;
+  background: rgba(1, 9, 19, 0.76);
+  filter: blur(28px);
+}
+
+.heroProduct {
+  position: absolute;
+  max-width: none;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 30px 28px rgba(0, 0, 0, 0.72));
+}
+
+.heroProductGrogu {
+  left: -2%;
+  bottom: 4%;
+  z-index: 4;
+  width: 48%;
+}
+
+.heroProductBatman {
+  left: 38%;
+  bottom: 6%;
+  z-index: 3;
+  width: 35%;
+}
+
+.heroProductGhostface {
+  right: -1%;
+  bottom: -3%;
+  z-index: 2;
+  width: 43%;
+}
+
 .heroVisual {
   position: relative;
   z-index: 2;
@@ -393,7 +447,7 @@ input {
 
 .heroScroll {
   position: absolute;
-  left: 50%;
+  left: var(--gutter);
   bottom: 31px;
   z-index: 5;
   display: flex;
@@ -402,7 +456,6 @@ input {
   color: #62625e;
   font-size: var(--type-micro);
   letter-spacing: 0.16em;
-  transform: translateX(-50%);
 }
 
 .scrollLine {
@@ -1036,8 +1089,17 @@ footer {
     gap: clamp(14px, 2vw, 26px);
   }
 
+  .hero {
+    grid-template-columns: minmax(0, 0.95fr) minmax(380px, 1.05fr);
+    column-gap: clamp(1rem, 2vw, 2rem);
+  }
+
   .heroCopy {
-    width: min(900px, 100%);
+    width: min(580px, 100%);
+  }
+
+  .heroProducts {
+    margin-right: calc(var(--gutter) * -0.7);
   }
 
   .productGrid {
@@ -1138,6 +1200,10 @@ footer {
   .hero {
     height: auto;
     min-height: calc(100svh - 102px);
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(350px, 44svh);
+    gap: 0;
+    padding-inline: 0;
   }
 
   .hero::before {
@@ -1153,9 +1219,11 @@ footer {
 
   .heroCopy {
     z-index: 5;
-    align-self: center;
-    padding: clamp(6rem, 16vw, 9rem) 24px clamp(4.5rem, 12vw, 6rem);
-    text-align: center;
+    width: 100%;
+    align-self: auto;
+    align-items: flex-start;
+    padding: clamp(5rem, 13vw, 7rem) 24px clamp(2rem, 7vw, 3.5rem);
+    text-align: left;
   }
 
   .hero h1 {
@@ -1167,14 +1235,14 @@ footer {
 
   .heroText {
     max-width: 440px;
-    margin: 25px auto 0;
+    margin: 25px 0 0;
     font-size: clamp(1.0625rem, 1.6vw + 0.7rem, 1.25rem);
     line-height: 1.45;
   }
 
   .heroActions {
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
     gap: 10px;
     margin-top: 31px;
@@ -1191,6 +1259,29 @@ footer {
 
   .heroVisual img {
     object-position: 62% center;
+  }
+
+  .heroProducts {
+    min-height: 350px;
+    margin: -20px 0 0;
+  }
+
+  .heroProductGrogu {
+    left: 4%;
+    bottom: 3%;
+    width: 43%;
+  }
+
+  .heroProductBatman {
+    left: 38%;
+    bottom: 4%;
+    width: 30%;
+  }
+
+  .heroProductGhostface {
+    right: 1%;
+    bottom: -5%;
+    width: 37%;
   }
 
   .heroIndex {
@@ -1491,7 +1582,7 @@ footer {
   }
 
   .heroCopy {
-    padding: 88px var(--gutter) 64px;
+    padding: 78px var(--gutter) 28px;
   }
 
   .hero h1 {
@@ -1509,6 +1600,26 @@ footer {
 
   .heroActions {
     width: 100%;
+  }
+
+  .heroProducts {
+    min-height: 320px;
+    margin-top: 0;
+  }
+
+  .heroProductGrogu {
+    left: -3%;
+    width: 49%;
+  }
+
+  .heroProductBatman {
+    left: 35%;
+    width: 34%;
+  }
+
+  .heroProductGhostface {
+    right: -4%;
+    width: 42%;
   }
 
   .button {
