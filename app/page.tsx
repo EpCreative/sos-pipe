@@ -150,16 +150,22 @@ export default function Home() {
           />
         </div>
         <div className="manifestoCopy">
-          <p className="eyebrow">O QUE NOS MOVE</p>
-          <h2>ALÉM DO OBJETO. UMA EXPERIÊNCIA.</h2>
-          <p>
-            A SOS nasceu para selecionar objetos que unem função, estética e
-            personalidade. Cada peça entra na curadoria pelo material, pelo
-            desenho e pela experiência que entrega — nada está aqui por acaso.
-          </p>
-          <a className="textLink" href="#contato">
-            NOSSA HISTÓRIA <span>↗</span>
-          </a>
+          <h2>SEMPRE QUE PRECISAR, CONTE COM A SOS PIPE.</h2>
+          <div className="manifestoText">
+            <p className="manifestoLead">
+              A madrugada não para. E nós também não.
+            </p>
+            <p>
+              A SOS Pipe é um delivery especializado em produtos para tabacaria
+              criado para atender quem precisa de um maçarico, bong, pipe,
+              sedas, dichavadores e acessórios com rapidez, principalmente
+              quando a maioria das lojas já encerrou o atendimento.
+            </p>
+            <p>
+              Porque imprevistos acontecem. E quando acontecerem, a SOS Pipe
+              está pronta para atender.
+            </p>
+          </div>
         </div>
       </section>
 
