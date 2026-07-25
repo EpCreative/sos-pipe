@@ -661,13 +661,29 @@ input {
   background: var(--black);
 }
 
-.manifestoCopy > p:not(.eyebrow) {
+.manifestoText {
   max-width: 590px;
-  margin: 40px 0 32px;
+  margin-top: 40px;
   color: #91918c;
   font-size: clamp(1.125rem, 0.35vw + 1.02rem, 1.375rem);
   line-height: 1.5;
   letter-spacing: 0.045em;
+}
+
+.manifestoText p {
+  margin: 0;
+}
+
+.manifestoText p + p {
+  margin-top: 20px;
+}
+
+.manifestoText .manifestoLead {
+  color: var(--white);
+  font-size: clamp(1.375rem, 0.5vw + 1.2rem, 1.75rem);
+  line-height: 1.25;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .productHeading {
@@ -1333,7 +1349,7 @@ footer {
     padding: 90px 24px;
   }
 
-  .manifestoCopy > p:not(.eyebrow) {
+  .manifestoText {
     font-size: 1.1875rem;
     line-height: 1.48;
   }
