@@ -191,16 +191,6 @@ export default function Home() {
       </section>
 
       <section className="section productsSection" id="produtos">
-        <div className="sectionHeading productHeading">
-          <div>
-            <p className="eyebrow">SELEÇÃO SOS</p>
-            <h2>DESTAQUES DA CURADORIA.</h2>
-          </div>
-          <a className="outlineButton" href="#todos-os-produtos">
-            VER TODOS OS PRODUTOS
-          </a>
-        </div>
-
         <div className="productGrid">
           {products.map((product) => (
             <article className="productCard" key={product.name}>

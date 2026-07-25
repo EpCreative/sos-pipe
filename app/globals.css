@@ -721,6 +721,10 @@ input {
   justify-self: end;
 }
 
+.productsSection {
+  padding-top: clamp(2rem, 4vw, 3.5rem);
+}
+
 .outlineButton {
   min-height: 48px;
   display: inline-flex;
