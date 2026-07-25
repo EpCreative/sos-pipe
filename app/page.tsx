@@ -9,49 +9,6 @@ const categories = [
   { name: "Kits", icon: "fa-box-open" },
 ];
 
-const products = [
-  {
-    name: "Bong de vidro Ônix",
-    category: "Vidro borossilicato",
-    price: "R$ 189,90",
-    installment: "ou 12x de R$ 18,97",
-    image: "/assets/product-bong-hq.png",
-    tag: "ÍCONE SOS",
-  },
-  {
-    name: "Pipe de vidro Orbit",
-    category: "Coleção Essentials",
-    price: "R$ 59,90",
-    installment: "ou 6x de R$ 11,15",
-    image: "/assets/product-pipe-hq.png",
-    tag: "ESSENCIAL",
-  },
-  {
-    name: "Dichavador 4 partes",
-    category: "Alumínio anodizado",
-    price: "R$ 79,90",
-    installment: "ou 8x de R$ 11,05",
-    image: "/assets/product-grinder-hq.png",
-    tag: "MAIS VENDIDO",
-  },
-  {
-    name: "Maçarico Flame",
-    category: "Chama dupla",
-    price: "R$ 89,90",
-    installment: "ou 9x de R$ 11,08",
-    image: "/assets/product-torch-hq.png",
-    tag: "NOVO",
-  },
-  {
-    name: "Kit Essential 05",
-    category: "Curadoria SOS",
-    price: "R$ 249,90",
-    installment: "ou 12x de R$ 24,95",
-    image: "/assets/product-kit-hq.png",
-    tag: "KIT",
-  },
-];
-
 const assurances = [
   ["01", "COMPRA SEGURA", "Ambiente protegido"],
   ["03", "ATÉ 12X", "No cartão de crédito"],
@@ -74,7 +31,6 @@ export default function Home() {
           <a className="active" href="#inicio">
             Início
           </a>
-          <a href="#produtos">Produtos</a>
           <a href="#categorias">Categorias</a>
           <a href="#manifesto">A marca</a>
           <a href="#contato">Contato</a>
@@ -84,7 +40,6 @@ export default function Home() {
           <summary aria-label="Abrir menu">MENU</summary>
           <nav aria-label="Navegação móvel">
             <a href="#inicio">Início</a>
-            <a href="#produtos">Produtos</a>
             <a href="#categorias">Categorias</a>
             <a href="#manifesto">A marca</a>
             <a href="#contato">Contato</a>
@@ -130,12 +85,12 @@ export default function Home() {
       <section className="section categoriesSection" id="categorias">
         <div className="categoryGrid">
           {categories.map((category) => (
-            <a className="categoryCard" href="#produtos" key={category.name}>
+            <article className="categoryCard" key={category.name}>
               <span className="categoryIcon" aria-hidden="true">
                 <i className={`fa-solid ${category.icon} fa-fw`} />
               </span>
               <h3>{category.name}</h3>
-            </a>
+            </article>
           ))}
         </div>
       </section>
@@ -169,38 +124,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section productsSection" id="produtos">
-        <div className="productGrid">
-          {products.map((product) => (
-            <article className="productCard" key={product.name}>
-              <div className="productImage">
-                <span className="productTag">{product.tag}</span>
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  width={1254}
-                  height={1254}
-                  loading="lazy"
-                />
-                <a
-                  className="quickAdd"
-                  href="#contato"
-                  aria-label={`Ver detalhes de ${product.name}`}
-                >
-                  +
-                </a>
-              </div>
-              <div className="productInfo">
-                <p>{product.category}</p>
-                <h3>{product.name}</h3>
-                <strong>{product.price}</strong>
-                <span>{product.installment}</span>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <footer id="contato">
         <div className="footerTop">
           <div className="footerBrand">
@@ -210,17 +133,10 @@ export default function Home() {
               width={2048}
               height={2048}
             />
-            <p>
-              Curadoria de acessórios para quem encontra significado nos
-              detalhes.
-            </p>
           </div>
           <div className="footerColumn">
             <h2>LOJA</h2>
-            <a href="#produtos">Todos os produtos</a>
             <a href="#categorias">Categorias</a>
-            <a href="#produtos">Lançamentos</a>
-            <a href="#produtos">Kits</a>
           </div>
           <div className="footerColumn">
             <h2>SUPORTE</h2>
@@ -229,11 +145,9 @@ export default function Home() {
             </a>
             <a href="#contato">Envios e prazos</a>
             <a href="#contato">Trocas e devoluções</a>
-            <a href="#contato">Perguntas frequentes</a>
           </div>
           <div className="footerColumn newsletter">
             <h2>FIQUE POR PERTO</h2>
-            <p>Novidades, curadorias e lançamentos direto no seu e-mail.</p>
             <form>
               <label className="srOnly" htmlFor="email">
                 Seu e-mail
