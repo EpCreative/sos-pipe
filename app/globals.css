@@ -369,36 +369,37 @@ input {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 0;
   pointer-events: none;
 }
 
 .heroProducts::before {
-  background:
-    linear-gradient(90deg, #02050a 0%, rgba(2, 5, 10, 0.8) 8%, transparent 35%),
-    linear-gradient(0deg, rgba(2, 5, 10, 0.56), transparent 24%);
+  background: radial-gradient(
+    circle at 66% 55%,
+    rgba(30, 116, 196, 0.18),
+    transparent 62%
+  );
 }
 
 .heroProducts::after {
-  background: radial-gradient(
-    circle at 71% 43%,
-    rgba(33, 111, 184, 0.13),
-    transparent 48%
-  );
-  mix-blend-mode: screen;
+  background:
+    linear-gradient(90deg, rgba(2, 5, 10, 0.82), transparent 18%),
+    linear-gradient(0deg, rgba(2, 5, 10, 0.42), transparent 24%);
 }
 
 .heroProductPremium {
   position: absolute;
-  inset: 0;
+  right: 0;
+  bottom: -1%;
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 115%;
+  height: auto;
   max-width: none;
-  object-fit: cover;
-  object-position: 68% center;
-  filter: contrast(1.08) brightness(0.98) saturate(0.88);
-  transform: scale(1.025);
+  object-fit: contain;
+  object-position: center bottom;
+  filter:
+    drop-shadow(0 34px 34px rgba(0, 0, 0, 0.78))
+    drop-shadow(0 0 24px rgba(38, 125, 207, 0.13));
 }
 
 .heroVisual {
@@ -1263,7 +1264,9 @@ footer {
   }
 
   .heroProductPremium {
-    object-position: 68% 55%;
+    right: -3%;
+    bottom: -2%;
+    width: 108%;
   }
 
   .heroIndex {
@@ -1590,8 +1593,9 @@ footer {
   }
 
   .heroProductPremium {
-    object-position: 71% 55%;
-    transform: scale(1.04);
+    right: -7%;
+    bottom: 0;
+    width: 114%;
   }
 
   .button {

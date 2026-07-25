@@ -140,13 +140,16 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="heroProducts" aria-label="Bong premium em destaque">
+        <div
+          className="heroProducts"
+          aria-label="Três bongs temáticos premium em destaque"
+        >
           <img
             className="heroProductPremium"
-            src="/assets/hero-products.png"
-            alt="Bong de vidro preto com acabamento premium e acessórios"
-            width={1920}
-            height={1080}
+            src="/assets/hero-bongs/premium-themed-group.webp"
+            alt="Bongs temáticos verde, preto e preto com máscara branca"
+            width={1500}
+            height={1200}
           />
         </div>
 
