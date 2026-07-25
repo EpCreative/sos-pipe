@@ -65,21 +65,13 @@ const products = [
 ];
 
 const assurances = [
-  ["COMPRA SEGURA", "Ambiente protegido"],
-  ["ENVIO DISCRETO", "Embalagem neutra"],
-  ["ATÉ 12X", "No cartão de crédito"],
-  ["ATENDIMENTO", "Humano e direto"],
+  ["01", "COMPRA SEGURA", "Ambiente protegido"],
+  ["03", "ATÉ 12X", "No cartão de crédito"],
 ];
 
 export default function Home() {
   return (
     <main>
-      <div className="announcement">
-        <span>FRETE GRÁTIS ACIMA DE R$ 199</span>
-        <span className="announcementDivider" />
-        <span>ENVIO PARA TODO O BRASIL</span>
-      </div>
-
       <header className="siteHeader">
         <a className="brand" href="#inicio" aria-label="SOS Pipe — início">
           <img
@@ -99,12 +91,6 @@ export default function Home() {
           <a href="#manifesto">A marca</a>
           <a href="#contato">Contato</a>
         </nav>
-
-        <div className="headerActions" aria-label="Ações da loja">
-          <a href="#produtos">BUSCA</a>
-          <a href="#contato">CONTA</a>
-          <a href="#produtos">SACOLA · 0</a>
-        </div>
 
         <details className="mobileMenu">
           <summary aria-label="Abrir menu">MENU</summary>
@@ -142,11 +128,9 @@ export default function Home() {
       </section>
 
       <section className="assuranceBar" aria-label="Benefícios da loja">
-        {assurances.map(([title, text], index) => (
+        {assurances.map(([number, title, text]) => (
           <article key={title}>
-            <span className="assuranceNumber">
-              {String(index + 1).padStart(2, "0")}
-            </span>
+            <span className="assuranceNumber">{number}</span>
             <div>
               <h2>{title}</h2>
               <p>{text}</p>
@@ -246,43 +230,6 @@ export default function Home() {
             </article>
           ))}
         </div>
-      </section>
-
-      <section className="editorialGrid" id="todos-os-produtos">
-        <a className="editorialCard editorialLarge" href="#produtos">
-          <span>01 / NOVOS OBJETOS</span>
-          <div>
-            <h2>RECÉM-CHEGADOS</h2>
-            <p>Novos materiais, formatos e experiências na seleção SOS.</p>
-            <strong>EXPLORAR LANÇAMENTOS ↗</strong>
-          </div>
-        </a>
-        <a className="editorialCard" href="#produtos">
-          <span>02 / CURADORIA</span>
-          <div>
-            <h2>KITS SOS</h2>
-            <p>Combinações pensadas para diferentes momentos.</p>
-            <strong>VER KITS ↗</strong>
-          </div>
-        </a>
-        <a className="editorialCard" href="#produtos">
-          <span>03 / OPORTUNIDADES</span>
-          <div>
-            <h2>ÚLTIMAS PEÇAS</h2>
-            <p>Escolhas especiais antes que saiam da curadoria.</p>
-            <strong>DESCOBRIR ↗</strong>
-          </div>
-        </a>
-      </section>
-
-      <section className="closing">
-        <div>
-          <p className="eyebrow">SOS PIPE</p>
-          <h2>ONDE O SEU MOMENTO GANHA FORMA.</h2>
-        </div>
-        <a className="button buttonLight" href="#produtos">
-          COMEÇAR A EXPLORAR
-        </a>
       </section>
 
       <footer id="contato">
