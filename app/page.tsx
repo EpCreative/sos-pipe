@@ -1,24 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 
 const categories = [
-  { number: "01", name: "Bongs", description: "Vidro, presença e precisão." },
-  { number: "02", name: "Pipes", description: "Formatos compactos e autorais." },
-  {
-    number: "03",
-    name: "Dichavadores",
-    description: "Mecânica simples. Acabamento impecável.",
-  },
-  {
-    number: "04",
-    name: "Maçaricos",
-    description: "Controle e potência em cada chama.",
-  },
-  {
-    number: "05",
-    name: "Acessórios",
-    description: "Os detalhes que completam sua experiência.",
-  },
-  { number: "06", name: "Kits", description: "Curadorias prontas para você." },
+  { name: "Bongs", icon: "fa-bong" },
+  { name: "Pipes", icon: "fa-smoking" },
+  { name: "Dichavadores", icon: "fa-gear" },
+  { name: "Maçaricos", icon: "fa-fire-flame-curved" },
+  { name: "Acessórios", icon: "fa-shapes" },
+  { name: "Kits", icon: "fa-box-open" },
 ];
 
 const products = [
@@ -140,28 +128,13 @@ export default function Home() {
       </section>
 
       <section className="section categoriesSection" id="categorias">
-        <div className="sectionHeading">
-          <div>
-            <p className="eyebrow">ESCOLHA POR CATEGORIA</p>
-            <h2>OBJETOS PARA O SEU MOMENTO.</h2>
-          </div>
-          <p>
-            Uma seleção direta, funcional e sem excessos. Encontre o que combina
-            com a sua forma de viver cada momento.
-          </p>
-        </div>
-
         <div className="categoryGrid">
           {categories.map((category) => (
             <a className="categoryCard" href="#produtos" key={category.name}>
-              <div className="categoryTop">
-                <span>{category.number}</span>
-                <span className="categoryArrow">↗</span>
-              </div>
-              <div>
-                <h3>{category.name}</h3>
-                <p>{category.description}</p>
-              </div>
+              <span className="categoryIcon" aria-hidden="true">
+                <i className={`fa-solid ${category.icon} fa-fw`} />
+              </span>
+              <h3>{category.name}</h3>
             </a>
           ))}
         </div>
