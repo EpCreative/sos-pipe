@@ -86,6 +86,7 @@ export default function Home() {
           rel="noreferrer"
           aria-label="Chamar a SOS Pipe no WhatsApp"
         >
+          <i className="fa-brands fa-whatsapp" aria-hidden="true" />
           DELIVERY JÁ
         </a>
       </section>

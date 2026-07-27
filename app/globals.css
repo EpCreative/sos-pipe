@@ -1813,9 +1813,15 @@ footer {
   left: 50%;
   bottom: clamp(20px, 3vw, 42px);
   min-width: clamp(174px, 18vw, 224px);
+  gap: 10px;
   justify-content: center;
   transform: translateX(-50%);
   box-shadow: 0 12px 35px rgb(0 0 0 / 45%);
+}
+
+.heroDeliveryButton i {
+  font-size: 1.25em;
+  line-height: 1;
 }
 
 .heroDeliveryButton:hover {
