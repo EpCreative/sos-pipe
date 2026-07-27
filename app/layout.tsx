@@ -1,17 +1,40 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./globals.css";
 
-const bebasNeue = Bebas_Neue({
+const bebasNeue = localFont({
+  src: [
+    {
+      path: "../.vinext/fonts/bebas-neue-65ca9caa7bbf/bebas-neue-995908a0.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../.vinext/fonts/bebas-neue-65ca9caa7bbf/bebas-neue-768b5303.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
   variable: "--font-bebas-neue",
-  weight: "400",
-  subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+  src: [
+    {
+      path: "../.vinext/fonts/geist-mono-00e989178794/geist-mono-013b2f2f.woff2",
+      weight: "100 900",
+      style: "normal",
+    },
+    {
+      path: "../.vinext/fonts/geist-mono-00e989178794/geist-mono-44745446.woff2",
+      weight: "100 900",
+      style: "normal",
+    },
+  ],
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
