@@ -591,17 +591,44 @@ input {
 }
 
 .categoryIcon {
+  position: relative;
   width: clamp(126px, 12vw, 154px);
   aspect-ratio: 1;
   display: block;
   flex: none;
+  overflow: hidden;
+  border-radius: 50%;
   transition: transform 220ms ease;
 }
 
 .categoryIcon img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: contain;
+}
+
+.categoryIcon::before,
+.categoryIcon::after {
+  position: absolute;
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.categoryIcon::before {
+  inset: 0;
+  z-index: 1;
+  border: clamp(10px, 1vw, 14px) solid var(--black-soft);
+}
+
+.categoryIcon::after {
+  inset: 8%;
+  z-index: 2;
+  border: 2px solid #55b9ff;
+  box-shadow:
+    0 0 4px rgba(21, 151, 255, 0.95),
+    inset 0 0 4px rgba(21, 151, 255, 0.55);
 }
 
 .categoryCard:hover .categoryIcon {
