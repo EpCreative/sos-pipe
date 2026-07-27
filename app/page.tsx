@@ -3,11 +3,13 @@
 const categories = [
   {
     name: "Bongs",
-    image: "/assets/category-icons/bongs-sem-fundo-v2.png",
+    image: "/assets/category-icons/bongs-sem-fundo-v3.png",
+    originalCircle: true,
   },
   {
     name: "Pipes",
-    image: "/assets/category-icons/pipes-sem-fundo-v2.png",
+    image: "/assets/category-icons/pipes-sem-fundo-v3.png",
+    originalCircle: true,
   },
   {
     name: "Dichavadores",
@@ -104,7 +106,10 @@ export default function Home() {
         <div className="categoryGrid">
           {categories.map((category) => (
             <article className="categoryCard" key={category.name}>
-              <span className="categoryIcon" aria-hidden="true">
+              <span
+                className={`categoryIcon${category.originalCircle ? " categoryIconOriginalCircle" : ""}`}
+                aria-hidden="true"
+              >
                 <img
                   src={category.image}
                   alt=""
