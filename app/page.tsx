@@ -30,8 +30,8 @@ const categories = [
 ];
 
 const assurances = [
-  ["01", "COMPRA SEGURA", "Ambiente protegido"],
-  ["03", "ATÉ 12X", "No cartão de crédito"],
+  ["COMPRA SEGURA", "Ambiente protegido"],
+  ["ATÉ 12X", "No cartão de crédito"],
 ];
 
 export default function Home() {
@@ -91,9 +91,8 @@ export default function Home() {
       </section>
 
       <section className="assuranceBar" aria-label="Benefícios da loja">
-        {assurances.map(([number, title, text]) => (
+        {assurances.map(([title, text]) => (
           <article key={title}>
-            <span className="assuranceNumber">{number}</span>
             <div>
               <h2>{title}</h2>
               <p>{text}</p>
