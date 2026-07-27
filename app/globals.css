@@ -484,9 +484,10 @@ input {
   min-height: 112px;
   display: flex;
   align-items: center;
-  gap: 18px;
+  justify-content: center;
   padding: 24px 2.8vw;
   border-right: 1px solid var(--line);
+  text-align: center;
 }
 
 .assuranceBar article:last-child {
