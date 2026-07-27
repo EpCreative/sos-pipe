@@ -1,12 +1,30 @@
 /* eslint-disable @next/next/no-img-element */
 
 const categories = [
-  { name: "Bongs", icon: "fa-bong" },
-  { name: "Pipes", icon: "fa-smoking" },
-  { name: "Dichavadores", icon: "fa-gear" },
-  { name: "Maçaricos", icon: "fa-fire-flame-curved" },
-  { name: "Acessórios", icon: "fa-shapes" },
-  { name: "Kits", icon: "fa-box-open" },
+  {
+    name: "Bongs",
+    image: "/assets/category-icons/bongs-sem-fundo-v2.png",
+  },
+  {
+    name: "Pipes",
+    image: "/assets/category-icons/pipes-sem-fundo-v2.png",
+  },
+  {
+    name: "Dichavadores",
+    image: "/assets/category-icons/dichavadores-sem-fundo-v2.png",
+  },
+  {
+    name: "Maçaricos",
+    image: "/assets/category-icons/macaricos-sem-fundo-v2.png",
+  },
+  {
+    name: "Acessórios",
+    image: "/assets/category-icons/acessorios-sem-fundo-v2.png",
+  },
+  {
+    name: "Kits",
+    image: "/assets/category-icons/kits-sem-fundo-v2.png",
+  },
 ];
 
 const assurances = [
@@ -87,7 +105,12 @@ export default function Home() {
           {categories.map((category) => (
             <article className="categoryCard" key={category.name}>
               <span className="categoryIcon" aria-hidden="true">
-                <i className={`fa-solid ${category.icon} fa-fw`} />
+                <img
+                  src={category.image}
+                  alt=""
+                  width={682}
+                  height={682}
+                />
               </span>
               <h3>{category.name}</h3>
             </article>
