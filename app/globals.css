@@ -631,6 +631,11 @@ input {
     inset 0 0 4px rgba(21, 151, 255, 0.55);
 }
 
+.categoryIconOriginalCircle::before,
+.categoryIconOriginalCircle::after {
+  content: none;
+}
+
 .categoryCard:hover .categoryIcon {
   transform: translateY(-4px);
 }
