@@ -14,11 +14,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sos-pipe.vercel.app"),
   title: "SOS Pipe — Seu momento, do seu jeito",
   description:
     "Curadoria de acessórios com design, qualidade e personalidade. Descubra a seleção SOS Pipe.",
-  other: {
-    "codex-preview": "development",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "/",
+    siteName: "SOS Pipe",
+    title: "SOS Pipe — Seu momento, do seu jeito",
+    description:
+      "Curadoria de acessórios com design, qualidade e personalidade. Descubra a seleção SOS Pipe.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "SOS Pipe — Seu momento, do seu jeito",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SOS Pipe — Seu momento, do seu jeito",
+    description:
+      "Curadoria de acessórios com design, qualidade e personalidade. Descubra a seleção SOS Pipe.",
+    images: ["/og.png"],
   },
   icons: {
     icon: "/assets/sos-pipe-logo-official-v2.png",
