@@ -1831,45 +1831,43 @@ footer {
 
 @media (max-width: 900px) {
   .hero.heroBanner {
-    height: auto;
+    height: clamp(460px, 70vw, 640px);
     min-height: 0;
-    display: flex;
-    flex-direction: column;
+    display: block;
     padding: 0;
   }
 
   .heroBannerImage {
-    position: relative;
-    inset: auto;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
     object-position: center;
   }
 
   .heroDeliveryButton {
-    position: relative;
-    left: auto;
-    bottom: auto;
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
     width: min(224px, calc(100% - 40px));
     min-height: 52px;
-    margin: 18px auto 24px;
-    transform: none;
+    margin: 0;
+    transform: translateX(-50%);
   }
 
   .heroDeliveryButton:hover {
-    transform: translateY(-2px);
+    transform: translate(-50%, -2px);
   }
 }
 
 @media (max-width: 520px) {
   .hero.heroBanner {
-    height: auto;
+    height: clamp(420px, 112vw, 540px);
   }
 
   .heroDeliveryButton {
-    bottom: auto;
+    bottom: 20px;
     width: min(220px, calc(100% - 40px));
-    margin-block: 16px 20px;
   }
 }
