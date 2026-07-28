@@ -1392,9 +1392,13 @@ footer {
   .manifestoMark {
     grid-column: 1;
     grid-row: auto;
-    min-height: 420px;
+    min-height: clamp(300px, 48vw, 380px);
     border-right: 0;
     border-bottom: 1px solid var(--line);
+  }
+
+  .manifestoMark img {
+    width: min(60%, 350px);
   }
 
   .manifestoCopy {
@@ -1402,7 +1406,7 @@ footer {
     grid-row: auto;
     margin: 0;
     border: 0;
-    padding: 90px 24px;
+    padding: clamp(64px, 10vw, 86px) 24px;
   }
 
   .manifestoText {
@@ -1481,12 +1485,13 @@ footer {
   }
 
   footer {
-    padding: 70px 24px 25px;
+    padding: clamp(52px, 8vw, 68px) 24px 24px;
   }
 
   .footerTop {
     grid-template-columns: repeat(2, 1fr);
-    gap: 56px 30px;
+    gap: 42px 30px;
+    padding-bottom: 56px;
   }
 
   .footerBrand {
@@ -1532,19 +1537,33 @@ footer {
   }
 
   .assuranceBar {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .assuranceBar article,
   .assuranceBar article:nth-child(2) {
-    min-height: 88px;
-    padding: 20px;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
+    min-height: 82px;
+    padding: 14px 8px;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
   }
 
-  .assuranceBar article:last-child {
-    border-bottom: 0;
+  .assuranceBar article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .assuranceBar h2 {
+    margin-bottom: 5px;
+    font-size: 0.9375rem;
+  }
+
+  .assuranceBar p {
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+
+  .categoriesSection {
+    padding-block: 48px;
   }
 
   .categoryGrid {
@@ -1553,9 +1572,9 @@ footer {
 
   .categoryCard {
     min-width: 0;
-    min-height: 164px;
-    gap: 12px;
-    padding: 16px 8px;
+    min-height: clamp(150px, 44vw, 164px);
+    gap: 10px;
+    padding: 14px 6px;
   }
 
   .categoryCard h3 {
@@ -1570,11 +1589,11 @@ footer {
   }
 
   .manifestoMark {
-    min-height: 260px;
+    min-height: clamp(220px, 68vw, 290px);
   }
 
   .manifestoMark img {
-    width: min(74%, 300px);
+    width: min(74%, 260px);
   }
 
   .manifestoMark::after {
@@ -1584,12 +1603,12 @@ footer {
   }
 
   .manifestoCopy {
-    padding: 58px 20px 64px;
+    padding: clamp(48px, 14vw, 60px) 18px clamp(56px, 16vw, 68px);
   }
 
   .manifesto h2 {
-    max-width: 10.5ch;
-    font-size: clamp(2.75rem, 12.8vw, 3.75rem);
+    max-width: 10.8ch;
+    font-size: clamp(2.75rem, 12.4vw, 3.55rem);
     line-height: 0.94;
   }
 
@@ -1631,8 +1650,8 @@ footer {
 
   .footerTop {
     grid-template-columns: 1fr;
-    gap: 38px;
-    padding-bottom: 56px;
+    gap: 30px;
+    padding-bottom: 42px;
   }
 
   .footerBrand,
@@ -1641,12 +1660,17 @@ footer {
   }
 
   footer {
-    padding: 56px 20px 24px;
+    padding: 48px 18px 22px;
   }
 
   .footerBrand img {
-    width: 138px;
-    margin: -26px 0 -24px;
+    width: 124px;
+    margin: -22px auto -20px;
+  }
+
+  .footerColumn {
+    align-items: center;
+    text-align: center;
   }
 
   .footerColumn a,
@@ -1666,9 +1690,15 @@ footer {
   .footerBottom {
     gap: 16px;
     line-height: 1.45;
+    text-align: center;
+  }
+
+  .footerBottom > span:nth-child(2) {
+    text-align: center;
   }
 
   .footerBottom > div {
+    justify-content: center;
     flex-wrap: wrap;
     gap: 12px 22px;
   }
@@ -1831,7 +1861,7 @@ footer {
 
 @media (max-width: 900px) {
   .hero.heroBanner {
-    height: calc(42.96875vw + clamp(70px, 12vw, 108px));
+    height: calc(42.96875vw + clamp(84px, 14vw, 112px));
     min-height: 0;
     display: block;
     padding: 0;
@@ -1853,7 +1883,7 @@ footer {
     position: absolute;
     inset: auto 0 0;
     z-index: 2;
-    height: clamp(70px, 12vw, 108px);
+    height: clamp(84px, 14vw, 112px);
     background: linear-gradient(
       180deg,
       rgba(2, 5, 10, 0),
@@ -1876,8 +1906,8 @@ footer {
   .heroDeliveryButton {
     position: absolute;
     left: 50%;
-    bottom: 24px;
-    width: min(224px, calc(100% - 40px));
+    bottom: clamp(16px, 3vw, 24px);
+    width: min(224px, calc(100% - 32px));
     min-height: 52px;
     margin: 0;
     transform: translateX(-50%);
@@ -1890,11 +1920,14 @@ footer {
 
 @media (max-width: 520px) {
   .hero.heroBanner {
-    height: calc(42.96875vw + 78px);
+    height: calc(42.96875vw + 84px);
   }
 
   .heroDeliveryButton {
-    bottom: 13px;
-    width: min(220px, calc(100% - 40px));
+    bottom: 16px;
+    width: min(210px, calc(100% - 32px));
+    min-height: 50px;
+    padding-inline: 20px;
+    gap: 9px;
   }
 }
